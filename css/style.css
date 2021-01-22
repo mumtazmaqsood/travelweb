@@ -1,0 +1,152 @@
+/* Note: if you want to make your website responsive then use rm, rem units */
+
+/* fonts imports form the font.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+
+
+/* Reset CSS */
+/* Be default browser give padding and margin to our page  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* means everything should be inside box
+     if padding include it should be include in box */
+}
+
+/* for font size, normal size is 16px, for responsive web site, going to use em
+and use in %, this size 62.5% help to those users they wants to zoomin or out then fontsize 
+will adjust accordingly */
+html {
+    /* font-size: 10px; */
+    /* 16px --- 100% */
+    /* 10px---(100/16)*10 = 62.5%   */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+ul li {
+    list-style: none;
+}
+
+a{
+    /* rem working according to its root element , we have set root element font size
+    10px--> 62.5%, root element has 10px --1rem --> 1.6 rem means 16px */
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+p, li {
+    /* em size adjusted to its parent which has 1.6rem-->16px , so .5em --half of its parent 8px
+    in responsive website when fontsize change, automatically margin adjusted according to its
+    parent size */
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15rem;
+    font-weight: 500; /* normally 700 */
+
+}
+
+/* ############ Utility Classes #############################*/
+
+.lg-heading {
+    font-size: 3.2rem; /* 32px */
+}
+
+.md-heading {
+    font-size: 2.2rem; /* 22px */
+}
+
+/* color used in web */
+.text-red {
+    color: #e63946
+}
+.text-light {
+    color: #f4f4f4
+}
+
+.text-black {
+    color: #333333
+}
+.text-gray {
+    color: #555555
+}
+
+
+
+
+
+/* --------------set the backgound images-----------------------------------------  */
+.header {
+    /* we can give 100vh then it ll cover whole page, 
+    linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)) used to dark the background image  */
+    height: 95vh; 
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../images/header-image.jpg');
+    background-position: center;  /* set image in center */
+    background-repeat: none;
+    background-size: cover;
+    /* Resize the background image to cover the entire container, 
+    even if it has to stretch the image or cut a little bit off one of the edges */
+}
+
+/* ---------------------------------------------------------------------------- */
+/* css for nav bar */
+/* ---------------------------------------------------------------------------- */
+.navbar {
+    border: 2px solid white;    
+    padding: 1rem;
+}
+
+/* header logo & a links --> font color is white */
+/* .header .logo, 
+.header .nav-items a {
+    color: white;
+} */
+
+
+.navbar a:link,
+.navbar a:visited {
+    color: #f4f4f4;
+}
+
+/* header nav logo float left, header navbar items float right*/
+.header .navbar .logo {
+
+    float: left;
+}
+
+.header .navbar .nav-items {
+    margin-top: 1rem; /* 10px */
+    float: right;
+    
+}
+
+.header .navbar .nav-item{
+    display: inline;
+    padding: 1rem;
+    text-transform: uppercase;
+    
+}
+
+/* after floating the elements, they are out of normal html flow and the border given has been
+disapeared, to make element in normal html flow, solution is that to make 
+Pesudo after class, it must take content which is empty string  */
+
+.navbar::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---------------------------------------------------------------------------- -----*/
+/* -----------------------------End Nav Bar */
+/* --------------------------------------------------------------------------------- */
