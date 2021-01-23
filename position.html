@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+
+<!-- in normal htmlflow elements are in static position when we want to position according to 
+    requirements, we can use relative, absoulte fixed, sticky and then give top, bottom, left
+    right and element adjust it postion. 
+    in relative -> element in html flow 
+    in absolute -> element are out of flow and adjust its postion to parent element, so
+    if there is no parent element then it adjust its position to root element, 
+    fixed-> out of flow and fixed to specific position
+    sticky -> in flow and stick to its parent  
+
+ -->
+
+    <style>
+        * {
+            margin: 10px auto;
+        }
+        .box1 {
+            /* border: 2px soild red; */
+            border: 2px solid red;
+             width:500px;
+             height: 500px;
+            background: lightpink;
+            position: relative;
+            
+        }
+        .box2 {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width:100px;
+            height: 100px;
+            background: lightgreen;
+            
+        }
+        /* .box3 {
+            position: absolute;
+            left:0;
+            top:0;
+            width:300px;
+            height: 300px;
+            background: blue;
+            
+        }
+        .box4 {
+            
+            width:100px;
+            height: 100px;
+            background: cyan;
+        } */
+    </style>
+
+
+</head>
+<body>
+    <div class="box1">
+        box1
+        <div class="box2">
+            box2
+            <!-- <div class="box3">
+                box3
+                <div class="box4">
+                    box4
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>

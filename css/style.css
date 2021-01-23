@@ -58,6 +58,15 @@ h1, h2, h3 {
 
 /* ############ Utility Classes #############################*/
 
+
+.container {
+    max-width: 1200px;
+    width: 90%; /* when user reduce screen size then text adjust its width with its parent */
+    margin: 0 auto;
+}
+
+
+
 .lg-heading {
     font-size: 3.2rem; /* 32px */
 }
@@ -82,27 +91,52 @@ h1, h2, h3 {
 }
 
 
+.btn {
+    display: inline-block; /* a tage or inline, after block it is easy to give padding, margin etc */
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+.btn-primary {
+    background: #f4f4f4;
+    border-radius: 10em; /* 100px  */
+}
+.btn-primary:hover {
+    background: #dddddd;
+}
 
+.btn-secondary {
+    border: 2px solid #e63946;
+    border-radius: 1.5em; 
+    color: #e63946;
+    background: white;
+}
+.btn-secondary:hover {
+    background: #dddddd ;
+}
 
 
 /* --------------set the backgound images-----------------------------------------  */
 .header {
     /* we can give 100vh then it ll cover whole page, 
     linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)) used to dark the background image  */
-    height: 95vh; 
+    position: relative; /* main div is relative and content div is absolute */
+    height: 80vh; 
     background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../images/header-image.jpg');
     background-position: center;  /* set image in center */
     background-repeat: none;
     background-size: cover;
     /* Resize the background image to cover the entire container, 
     even if it has to stretch the image or cut a little bit off one of the edges */
+    /* border: 2px solid red; */
 }
 
 /* ---------------------------------------------------------------------------- */
 /* css for nav bar */
 /* ---------------------------------------------------------------------------- */
 .navbar {
-    border: 2px solid white;    
+    /* border: 2px solid white; */    
     padding: 1rem;
 }
 
@@ -118,9 +152,12 @@ h1, h2, h3 {
     color: #f4f4f4;
 }
 
+.navbar a:hover {
+    border-bottom: 2px solid #f4f4f4;
+}
+
 /* header nav logo float left, header navbar items float right*/
 .header .navbar .logo {
-
     float: left;
 }
 
@@ -150,3 +187,143 @@ Pesudo after class, it must take content which is empty string  */
 /* ---------------------------------------------------------------------------- -----*/
 /* -----------------------------End Nav Bar */
 /* --------------------------------------------------------------------------------- */
+
+
+/* ----------Content Header---------------------- */
+/* here use the position we want this header-content should be position with respect to 
+main header, 
+
+main header position is relative --> in relative it ll remain in html flow
+header content position is absolute --> bcz we want to adjust its position w.r.t main header,
+in absolute position in out of normal flow, if we adjust its top, left it will position
+w.r.t its closet parent, if i ll not find any parent then it will position itself main html */
+
+.header-content{
+    position:absolute;
+    /* border: 2px solid #f4f4f4; */
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.header-content h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.header-content p {
+    text-transform: uppercase;
+}
+
+
+
+/* ###############Show Case Styling ################################### */
+
+.showcase {
+    background-color: #dddddd;
+    padding: 10rem 0; /* 100px top bottom , left right*/
+}
+
+.row {
+    height: 350px;
+    background: #ffffff;
+    box-shadow: 15px 15px 20px 0 #aaaaaa;  /* horizental, vertial , blur, spread, color */
+}
+
+.row1 {
+    margin-bottom: 10rem;
+    
+}
+
+.row1 .img-box,
+.row1 .text-box {
+    float: left;
+    width: 50%;
+}
+.row1 .img-box {
+    /* border: 2px solid green; */
+    height: 100%; /* 100% of its parent that is row1 */
+    
+}
+
+.row2 .img-box,
+.row2 .text-box {
+    float: right;
+    width: 50%;
+}
+.row2 .img-box {
+    /* border: 2px solid green; */
+    height: 100%; /* 100% of its parent that is row1 */
+}
+
+.row .text-box {
+    padding: 3rem; /* 30px */
+}
+
+.row .img-box img {
+    /* img are inline element, we cannot apply padding,maring */
+    display: inline-block; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* image display adjust when zoom in or out */
+}
+
+/* after floating elements we have to clear, here we have already given height 
+to row element, but safe side clear the float the in future there is no problem with
+design */
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* ################## Feature styling###################### */
+
+.feature {
+    padding: 10rem 0;
+}
+ /* .box-wrapper{
+    border: 2px solid gold;   
+}  */
+
+.box {
+    width: 33.33333%;
+    float: left;
+    /* border: 2px solid red; */
+    padding: 2rem; /* 20px */
+    text-align: center;
+    box-shadow: 15px 15px 20px 0 #aaaaaa;  /* horizental, vertial , blur, sperad, color */
+}
+
+
+/* use https://gradienthunt.com/gradient/752  for gradients */ 
+.box1 {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(146, 129, 30) 0%, rgba(225,130,1,1) 90.5% );
+    color: white;
+}
+.box2 {
+    background-image: linear-gradient( 90.1deg,  rgba(67,198,172,1) 37.7%, rgba(147,237,199,1) 85.1% );
+    color: black;
+}
+.box3 {
+    background-image: radial-gradient( circle 324px at 0.8% 51.7%,  rgba(234,92,125,1) 0%, rgba(236,112,102,1) 90% );
+    color:white;
+}
+
+.box-wrapper::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ###################### Footer Styling ################################ */
+.footer {
+    background: #333333;
+    color: #f4f4f4;
+    padding: 2rem; /* 20px */
+    text-align: center;
+}
+.social-media-links i {
+    margin: 2rem; /* 20px */
+}
