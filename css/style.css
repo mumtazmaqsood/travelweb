@@ -549,3 +549,72 @@ design */
     background: #e63946; 
     color: white;
 }
+
+
+/* media quries */
+
+/* target deivces those width 500px or less than 500px */
+/* we have set html font size 10px --> 62% and used rem --> that is going to help 
+webpage is responsive, if root(html) font size will change it ll effect whole website
+font-sizes */
+@media(max-width: 600px) {
+    html{
+        /* font-size: 8px; html be default font size is 16px---100% */
+        font-size: 50%;
+    }
+    .navbar .nav-items, 
+    .navbar .logo {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    .row {
+        height: auto;
+        width: 100%;
+    }
+
+    .row .img-box,
+    .row .text-box {
+        float:none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .feature .box {
+        float:none;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* about us page */
+    
+    .count-item {
+        float: none;
+        display: block;
+        width: 100%;
+        border: 3px solid #e63946;
+        margin-bottom: 5rem;
+    }
+    .counts .count-items {
+        margin-bottom: 5rem;
+        border: 3px solid #e63946;
+    }
+
+    .cat-banner-left, 
+    .cat-banner-right {
+        float: none;
+        /* display: block; */
+        width: 100%;
+        text-align: left;
+    }
+
+    /* contact us */
+
+    .company-address,
+    .form {
+        float: none;
+        width: 100%;
+        
+    }
+}
