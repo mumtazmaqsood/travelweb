@@ -423,16 +423,16 @@ design */
 }
 .btn-cta {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     border: 3px solid white;
-    padding: 0.3em 2.5em;
+    /* padding: 0.3em 2.5em; */
     letter-spacing: 0.3em;
     color: #f4f4f4;
     margin: 1.2rem;
 }
 .btn-cta:hover{
-    background: #dddddd;
+    background: #7e484de1;
 }    
 
 .cat-banner-left {
@@ -609,6 +609,11 @@ font-sizes */
         text-align: left;
     }
 
+    .btn-cta {
+        font-size: 2rem;
+        padding: 0;
+        /* border: 3px solid red; */
+    }
     /* contact us */
 
     .company-address,
