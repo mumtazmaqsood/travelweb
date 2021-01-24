@@ -34,4 +34,4 @@ jobs:
         run: npm install --global surge
       
       - name: Run Surge
-        run: surge ./index.html http://euro-travel.surge.sh/ --token ${{secrets.SURGE_TOKEN}} 
+        run: surge / http://euro-travel.surge.sh/ --token ${{secrets.SURGE_TOKEN}} 
