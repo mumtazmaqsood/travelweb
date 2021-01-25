@@ -557,7 +557,7 @@ design */
 /* we have set html font size 10px --> 62% and used rem --> that is going to help 
 webpage is responsive, if root(html) font size will change it ll effect whole website
 font-sizes */
-@media(max-width: 600px) {
+@media(max-width: 500px) {
     html{
         /* font-size: 8px; html be default font size is 16px---100% */
         font-size: 50%;
@@ -621,5 +621,98 @@ font-sizes */
         float: none;
         width: 100%;
         
+    }
+}
+
+@media(min-width: 501px) and (max-width: 768px){
+    html {
+        /* font-size: 8px; */
+        font-size: 50%;
+    }
+    p {
+        font-size: 1.8rem;
+    }
+
+    .navbar .nav-items, 
+    .navbar .logo {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    .row {
+        height: auto;
+        width: 100%;
+    }
+
+    .row .img-box,
+    .row .text-box {
+        float:none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .feature .box {
+        float:none;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* about us page */
+    
+    .count-item {
+        float: none;
+        display: block;
+        width: 100%;
+        border: 3px solid #e63946;
+        margin-bottom: 5rem;
+    }
+    .counts .count-items {
+        margin-bottom: 5rem;
+        border: 3px solid #e63946;
+    }
+
+    .cat-banner-left, 
+    .cat-banner-right {
+        float: none;
+        /* display: block; */
+        width: 100%;
+        text-align: left;
+    }
+
+    .btn-cta {
+        font-size: 2rem;
+        padding: 0;
+        /* border: 3px solid red; */
+    }
+    /* contact us */
+
+    .company-address,
+    .form {
+        float: none;
+        width: 100%;
+        
+    }
+
+}
+
+@media(min-width: 769px) and (max-width:1200px){
+    html{
+        /* font-size: 8.64px; */
+        font-size: 54%;  /*  8.64/16px*100 */
+    }
+
+}
+
+
+/* height is less than 500px and device is in landscape then apply this media 
+query*/
+/* header is equal to 80viewpoint in desktop modd ,
+ when it goes in landscape , header height is less 
+ height should be 80 % of its width in landscape mood
+ */
+@media(orientation: landscape) and (max-height: 500px) {
+    .header {
+        height: 80vmax; /* jitni be width hoo ge uss ka 80% height hoo ge */
     }
 }
